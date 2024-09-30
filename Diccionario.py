@@ -1,5 +1,5 @@
 #diccionario de informacion personal de una persona nombre edad y ciudad
-from renm import ciudad
+
 
 informacion_personal={"nombre":"Andres", "edad":20,
                       "Ciudad":"quito"}
