@@ -1,0 +1,4 @@
+1 arroz 50 45.0
+2 azucar 30 40.0
+3 sal 20 1.0
+4 aceite  89 5.0
