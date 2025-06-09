@@ -1,0 +1,191 @@
+CODIGO RECTANGULO
+// Rectangulo.cs
+// Esta clase representa una figura geométrica rectangular.
+// Encapsula el ancho y la altura del rectángulo como sus propiedades principales.
+
+public class Rectangulo
+{
+    // Propiedad privada para almacenar el ancho del rectángulo.
+    // Se utiliza el tipo de dato primitivo 'double' para permitir valores decimales.
+    private double ancho;
+
+    // Propiedad privada para almacenar la altura del rectángulo.
+    // Se utiliza el tipo de dato primitivo 'double' para permitir valores decimales.
+    private double altura;
+
+    // Constructor de la clase Rectangulo.
+    // Este método se llama automáticamente cuando se crea una nueva instancia de Rectangulo.
+    // Recibe parámetros 'anchoInicial' y 'alturaInicial' para inicializar las propiedades.
+    public Rectangulo(double anchoInicial, double alturaInicial)
+    {
+        // Validación básica: asegura que ancho y altura sean positivos al inicializar.
+        if (anchoInicial > 0 && alturaInicial > 0)
+        {
+            this.ancho = anchoInicial;
+            this.altura = alturaInicial;
+        }
+        else
+        {
+            // Si los valores iniciales no son válidos, se establecen en 0 y se advierte en la consola.
+            this.ancho = 0;
+            this.altura = 0;
+            System.Console.WriteLine("Advertencia: Ancho y altura iniciales deben ser positivos. Valores establecidos a 0.");
+        }
+    }
+
+    // Método para obtener el valor actual del ancho.
+    // Permite acceder al valor del ancho de forma controlada.
+    public double ObtenerAncho()
+    {
+        return this.ancho;
+    }
+
+    // Método para establecer un nuevo valor para el ancho.
+    // Permite modificar el valor del ancho de forma controlada.
+    public void EstablecerAncho(double nuevoAncho)
+    {
+        // Validación: asegurar que el ancho sea positivo.
+        if (nuevoAncho > 0)
+        {
+            this.ancho = nuevoAncho;
+        }
+        else
+        {
+            System.Console.WriteLine("Error: El ancho debe ser un valor positivo. No se aplicó el cambio.");
+        }
+    }
+
+    // Método para obtener el valor actual de la altura.
+    // Permite acceder al valor de la altura de forma controlada.
+    public double ObtenerAltura()
+    {
+        return this.altura;
+    }
+
+    // Método para establecer un nuevo valor para la altura.
+    // Permite modificar el valor de la altura de forma controlada.
+    public void EstablecerAltura(double nuevaAltura)
+    {
+        // Validación: asegurar que la altura sea positiva.
+        if (nuevaAltura > 0)
+        {
+            this.altura = nuevaAltura;
+        }
+        else
+        {
+            System.Console.WriteLine("Error: La altura debe ser un valor positivo. No se aplicó el cambio.");
+        }
+    }
+
+    // Método para calcular el área del rectángulo.
+    // Retorna un valor de tipo 'double' que representa el área.
+    // Utiliza la fórmula A = ancho * altura.
+    public double CalcularArea()
+    {
+        // Se multiplica el ancho por la altura para obtener el área.
+        return this.ancho * this.altura;
+    }
+
+    // Método para calcular el perímetro del rectángulo.
+    // Retorna un valor de tipo 'double' que representa el perímetro.
+    // Utiliza la fórmula P = 2 * (ancho + altura).
+    public double CalcularPerimetro()
+    {
+        // Se suma el ancho y la altura, y luego se multiplica por 2.
+        return 2 * (this.ancho + this.altura);
+    }
+}
+ // -----------------------------------------------------------
+        // PRUEBA DE LA CLASE RECTANGULO
+        // -----------------------------------------------------------
+        Console.WriteLine("\n=== Prueba de la Clase Rectangulo ===");
+
+        // 1. Crear una instancia (objeto) de Rectangulo
+        // Se crea un objeto 'miRectangulo' con un ancho inicial de 4.0 y una altura de 6.0.
+        Rectangulo miRectangulo = new Rectangulo(4.0, 6.0);
+        Console.WriteLine($"\n--- Rectángulo Inicial ---");
+        Console.WriteLine($"Ancho: {miRectangulo.ObtenerAncho()}");
+        Console.WriteLine($"Altura: {miRectangulo.ObtenerAltura()}");
+        Console.WriteLine($"Área: {miRectangulo.CalcularArea():F2}");
+        Console.WriteLine($"Perímetro: {miRectangulo.CalcularPerimetro():F2}");
+  
+
+CODIGO CIRCULO
+
+// Circulo.cs
+// Esta clase representa una figura geométrica circular.
+// Encapsula el radio del círculo como su propiedad principal.
+
+public class Circulo
+{
+    // Propiedad privada para almacenar el radio del círculo.
+    // Se utiliza el tipo de dato primitivo 'double' para permitir valores decimales.
+    private double radio;
+
+    // Constructor de la clase Circulo.
+    // Este método se llama automáticamente cuando se crea una nueva instancia de Circulo.
+    // Recibe un parámetro 'radioInicial' para inicializar la propiedad 'radio'.
+    public Circulo(double radioInicial)
+    {
+        // Validación básica: asegura que el radio sea positivo al inicializar.
+        if (radioInicial > 0)
+        {
+            this.radio = radioInicial;
+        }
+        else
+        {
+            // Si el radio inicial no es válido, se establece un valor predeterminado o se lanza una excepción.
+            // Aquí, lo establecemos en 0 y mostramos un mensaje de advertencia en la consola.
+            System.Console.WriteLine("Advertencia: El radio inicial debe ser positivo. Radio establecido a 0.");
+        }
+    }
+
+   // Método para obtener el valor actual del radio.
+    // Este es un "getter" que permite acceder al valor del radio de forma controlada.
+    public double ObtenerRadio()
+    {
+        return this.radio;
+    }
+
+    // Método para establecer un nuevo valor para el radio.
+    // Este es un "setter" que permite modificar el valor del radio de forma controlada.
+    // Recibe un parámetro 'nuevoRadio' que será el nuevo valor del radio.
+    public void EstablecerRadio(double nuevoRadio)
+    {
+        // Se añade validación para asegurar que el radio no sea negativo o cero.
+        if (nuevoRadio > 0)
+        {
+            this.radio = nuevoRadio;
+        }
+        else
+        {
+            // Opcional: Se puede lanzar una excepción (throw new ArgumentException("El radio debe ser positivo.");)
+            // o simplemente mostrar un mensaje de error en la consola.
+            System.Console.WriteLine("Error: El radio debe ser un valor positivo. No se aplicó el cambio.");
+        }
+    }
+
+    // Método para calcular el área del círculo.
+    // Retorna un valor de tipo 'double' que representa el área.
+    // Utiliza la constante Math.PI y la fórmula A = PI * radio^2.
+
+    public double CalcularArea()
+    {
+        // Math.PI es una constante predefinida en C# que representa el valor de Pi (aproximadamente 3.14159).
+        // Se multiplica Pi por el radio al cuadrado (radio * radio).
+        return Math.PI * this.radio * this.radio;
+    }
+
+    // Método para calcular el perímetro (circunferencia) del círculo.
+    // Retorna un valor de tipo 'double' que representa el perímetro.
+    // Utiliza la fórmula P = 2 * PI * radio.
+    public double CalcularPerimetro()
+    {
+        // Se multiplica 2 por Pi y por el radio.
+        return 2 * Math.PI * this.radio;
+    }
+}
+
+// ----------------------------------------------------------- // PRUEBA DE LA CLASE CIRCULO // ----------------------------------------------------------- Console.WriteLine("=== Prueba de la Clase Circulo ==="); // 1. Crear una instancia (objeto) de Circulo // Se crea un objeto 'miCirculo' con un radio inicial de 5.0. Circulo miCirculo = new Circulo(5.0); Console.WriteLine($"\n--- Círculo Inicial ---"); Console.WriteLine($"Radio: {miCirculo.ObtenerRadio()}"); Console.WriteLine($"Área: {miCirculo.CalcularArea():F2}"); // :F2 formatea el número a 2 decimales Console.WriteLine($"Perímetro: {miCirculo.CalcularPerimetro():F2}"); // 2. Modificar el radio del círculo // Se usa el método EstablecerRadio para cambiar el radio a 7.5. miCirculo.EstablecerRadio(7.5); Console.WriteLine($"\n--- Círculo con Radio Modificado ---"); Console.WriteLine($"Nuevo Radio: {miCirculo.ObtenerRadio()}"); 
+Console.WriteLine($"Nueva Área: {miCirculo.CalcularArea():F2}"); 
+Console.WriteLine($"Nuevo Perímetro: {miCirculo.CalcularPerimetro():F2}");
